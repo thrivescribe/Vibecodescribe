@@ -1,6 +1,6 @@
 # VibeCode Community - Project Handover Manifest
 **Repository:** https://github.com/thrivescribe/Vibecodescribe
-**Live URL:** https://work-one-rose.vercel.app
+**Live URL:** https://thrivescribe.github.io/Vibecodescribe/
 **Last Updated:** 2026-08-25
 
 ---
