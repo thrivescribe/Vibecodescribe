@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react'
 
 export default function Login() {
@@ -7,19 +6,15 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [rememberMe, setRememberMe] = useState(false)
-  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Simulate login
-    localStorage.setItem('vibecode_user', JSON.stringify({ email, name: email.split('@')[0] }))
-    navigate('/')
+    // Navigate back to home after login
+    window.location.hash = '#/'
   }
 
   const handleGoogleLogin = () => {
-    // Simulate Google login
-    localStorage.setItem('vibecode_user', JSON.stringify({ email: 'user@gmail.com', name: 'User' }))
-    navigate('/')
+    window.location.hash = '#/'
   }
 
   return (
@@ -48,12 +43,12 @@ export default function Login() {
         <div className="bg-white rounded-3xl shadow-2xl p-8">
           {/* Logo */}
           <div className="flex justify-center mb-6">
-            <Link to="/" className="flex items-center space-x-2 group">
+            <a href="#/" className="flex items-center space-x-2 group">
               <div className="w-10 h-10 bg-primary-coral rounded-lg flex items-center justify-center font-black text-white text-xl transform group-hover:rotate-12 transition-transform">
                 V
               </div>
               <span className="text-2xl font-black tracking-tight text-primary-navy">VibeCode</span>
-            </Link>
+            </a>
           </div>
 
           {/* Title */}
