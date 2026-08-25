@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #FFF8F0;
+  --color-navy: #1A1A2E;
+  --color-coral: #FF6B6B;
+  --color-yellow: #FFD93D;
+  --color-blue: #74C0FC;
+  --color-text: #2D2D2D;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-text);
+}
+
+/* Custom cursor trail styles */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-coral);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-coral);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+.cursor-dot.hover {
+  width: 12px;
+  height: 12px;
+}
+
+.cursor-outline.hover {
+  width: 60px;
+  height: 60px;
+  border-color: var(--color-yellow);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-coral);
+}
