@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Eye, EyeOff, Mail, Lock, Shield } from 'lucide-react'
+import { Eye, EyeOff, Mail, Lock } from 'lucide-react'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -166,7 +166,7 @@ export default function Login() {
         {/* Sign up link */}
         <p className="text-center text-white/70 mt-6 text-sm">
           Don't have an account?{' '}
-          <a href="/login" className="text-white font-bold hover:underline">Sign Up</a>
+          <a href="#" className="text-white font-bold hover:underline">Sign Up</a>
         </p>
       </div>
     </div>
