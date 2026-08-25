@@ -1,0 +1,20 @@
+{
+  "kind": "webpage_snapshot",
+  "url": "https://github.com/AgnesAI-Labs/AgnesCode",
+  "final_url": "https://github.com/AgnesAI-Labs/AgnesCode",
+  "status": 200,
+  "read_status": "blocked",
+  "content_type": "text/html; charset=utf-8",
+  "fetched_at": "2026-08-22T19:23:32.365255900+00:00",
+  "title": "GitHub - AgnesAI-Labs/AgnesCode · GitHub",
+  "description": "Contribute to AgnesAI-Labs/AgnesCode development by creating an account on GitHub.",
+  "site_name": "GitHub",
+  "published_at": null,
+  "source_type": "source_repo",
+  "text": "",
+  "quote_candidates": [],
+  "word_count": 0,
+  "truncated": false,
+  "blocked": true,
+  "source": "direct_http"
+}
