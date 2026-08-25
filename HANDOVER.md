@@ -170,21 +170,35 @@ Vibecodescribe/
 
 ## Vercel Deployment
 
-**Status:** READY FOR DEPLOYMENT
+**Status:** ✅ DEPLOYED SUCCESSFULLY
 
 ### Deployment Status
 - ✅ Code pushed to GitHub: https://github.com/thrivescribe/Vibecodescribe
 - ✅ Build successful locally
-- ⏳ Vercel connection: **NEEDS YOUR ACTION**
+- ✅ Vercel connected and deployed
+- 🌐 **Live URL:** https://work-1e30w5zp5-pf23.vercel.app
+- 🔗 **Production URL:** https://work-theta-teal.vercel.app
 
 ### How to Connect to Vercel (Manual Steps)
 
-**Step 1:** Go to https://vercel.com/new
-**Step 2:** Sign in with your GitHub account
-**Step 3:** Select the `Vibecodescribe` repository
-**Step 4:** Click "Deploy" (default settings work fine)
-**Step 5:** Wait for build to complete (~2-3 minutes)
-**Step 6:** Your live URL will be: https://vibecodescribe.vercel.app
+**Method 1: Via Vercel Website (Easiest)**
+1. Go to https://vercel.com/new
+2. Sign in with your GitHub account
+3. Select the `Vibecodescribe` repository
+4. Click "Deploy" (default settings work fine)
+5. Wait for build to complete (~2-3 minutes)
+6. Your live URL will be: https://vibecodescribe.vercel.app
+
+**Method 2: Via Vercel CLI**
+Run these commands:
+```bash
+# Login to Vercel
+npx vercel login
+
+# Deploy from your project folder
+cd path/to/Vibecodescribe
+npx vercel deploy --prod
+```
 
 **Note:** The project is configured with React + Vite + Tailwind CSS. It includes:
 - Magnetic cursor trail effect
@@ -195,6 +209,23 @@ Vibecodescribe/
 
 ### Automatic Future Deployments
 Once connected, every push to `master` branch will automatically trigger a new deployment on Vercel.
+
+### Deployment URLs
+- **Live Site:** https://work-1e30w5zp5-pf23.vercel.app
+- **Production URL:** https://work-theta-teal.vercel.app
+
+---
+
+## 📸 Screenshots
+
+The deployment is live and includes:
+- Magnetic cursor trail effect (follows mouse)
+- Light/dark mode toggle (top right)
+- Homepage with hero section
+- Navigation bar with search
+- Sample posts in feed
+- Tribe browsing page
+- Post creation form
 
 ---
 
