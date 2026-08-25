@@ -25,10 +25,11 @@
 - [x] Repository initialized on GitHub
 - [x] Tech stack selected: React + Vite
 - [x] Design direction: Light/dark mode toggle, magnetic cursor trail
+- [x] Project structure created (React components, Tailwind config)
+- [x] Initial commit pushed to GitHub
 
 ### 🔄 In Progress
-- Setting up Vercel deployment pipeline
-- Creating basic test deployment
+- Setting up Vercel deployment (waiting for manual connection)
 
 ### ⏳ Pending
 - [ ] Get final decisions on: demo data, scope boundary
@@ -167,23 +168,30 @@ Vibecodescribe/
 
 ## ☁️ Vercel Deployment
 
-**Status:** SETTING UP
+**Status:** PENDING MANUAL SETUP (Vercel CLI not available in environment)
 
-### Deployment Pipeline
-```
-Local Code → git push → GitHub → Vercel auto-deploy → Live URL
-```
+### Deployment Status
+- ✅ Code pushed to GitHub: https://github.com/thrivescribe/Vibecodescribe
+- ⏳ Vercel connection: **NEEDS MANUAL ACTION**
 
-### Steps to Complete
-1. ✅ Initialize React project locally
-2. ⏳ Configure vercel.json
-3. ⏳ Add build scripts
-4. ⏳ Connect to Vercel account
-5. ⏳ Deploy first version
-6. ⏳ Verify live URL works
+### How to Connect to Vercel (Manual Steps)
 
-### Expected Live URL
-https://vibecodescribe.vercel.app
+Since Vercel CLI is not available in this environment, please follow these steps:
+
+**Step 1:** Go to https://vercel.com/new
+**Step 2:** Sign in with your GitHub account
+**Step 3:** Select the `Vibecodescribe` repository
+**Step 4:** Click "Deploy" (default settings work fine)
+**Step 5:** Wait for build to complete (~2-3 minutes)
+**Step 6:** Your live URL will be: https://vibecodescribe.vercel.app
+
+**Note:** The current code includes a Hello World test page at `/public/index.html`. Once you deploy, it should show:
+- Gradient background
+- "Hello from Vibecodescribe!" text
+- "AgnesCode Build Challenge 2026" badge
+
+### Automatic Future Deployments
+Once connected, every push to `master` branch will automatically trigger a new deployment on Vercel.
 
 ---
 

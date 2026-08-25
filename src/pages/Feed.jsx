@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import PostCard from './PostCard'
-import Sidebar from './Sidebar'
-import Hero from './Hero'
+import PostCard from '../components/PostCard'
+import Sidebar from '../components/Sidebar'
+import Hero from '../components/Hero'
 
 const initialPosts = [
   {
