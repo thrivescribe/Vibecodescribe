@@ -1,6 +1,6 @@
 # VibeCode Community - Project Handover Manifest
 **Repository:** https://github.com/thrivescribe/Vibecodescribe
-**Live URL:** https://vibecodescribe.vercel.app
+**Live URL:** https://work-one-rose.vercel.app
 **Last Updated:** 2026-08-25
 
 ---
@@ -88,10 +88,10 @@ src/
 ---
 
 ## Deployment
-- **Vercel**: https://vibecodescribe.vercel.app
+- **Vercel Production**: https://work-jwodiuhts-pf23.vercel.app (Latest: HTTP 200 ✓)
 - **GitHub**: https://github.com/thrivescribe/Vibecodescribe
 - **Build**: npm run build (uses Vercel auto-detection for Vite)
-- **vercel.json**: Static file serving configuration
+- **vercel.json**: Proper Vite configuration
 
 ---
 
@@ -102,6 +102,8 @@ src/
 - [ ] Connect to backend API (Firebase Firestore)
 - [ ] Mobile responsive testing for all new pages
 - [ ] Add image upload functionality for posts
+- [ ] Fix custom domain alias (SSO protection issue - use https://work-one-rose.vercel.app)
+- [ ] Fix custom domain alias (SSO protection issue)
 
 ---
 
@@ -113,7 +115,9 @@ src/
 - 2026-08-23: Enhanced Feed with community stats bar and category tabs (AI Workshop Lite style)
 - 2026-08-23: Updated CreatePost with post type selector (Share/Question/Discussion)
 - 2026-08-23: Updated Navbar with auth-aware navigation (Community/Members/Leaderboards)
-- 2026-08-25: Deployed to Vercel successfully
+- 2026-08-25: Fixed Git author info (changed from johnnyboi to thrivescribe)
+- 2026-08-25: Deployed successfully at https://work-one-rose.vercel.app (HTTP 200)
+- 2026-08-25: Custom domain alias needs manual fix due to SSO protection
 
 ---
 
