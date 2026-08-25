@@ -9,52 +9,51 @@ export default function CreatePost() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // TODO: Add actual submission logic
     console.log('Post created:', { title, content, tribe })
     navigate('/')
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
-      <div className="max-w-2xl mx-auto px-4">
-        <button onClick={() => navigate('/')} className="text-violet-600 hover:text-violet-700 mb-6 flex items-center gap-2">
+    <div className="min-h-screen bg-primary-cream py-12 px-4">
+      <div className="max-w-2xl mx-auto">
+        <button onClick={() => navigate('/')} className="text-primary-coral hover:text-red-500 mb-6 flex items-center gap-2 font-bold">
           ← Back to Feed
         </button>
         
-        <h1 className="text-3xl font-bold mb-8">Share Your Vibe</h1>
+        <h1 className="text-4xl font-black mb-8 text-primary-navy">Share Your Vibe</h1>
         
-        <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+        <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-sm border-2 border-gray-100">
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium mb-2">Title</label>
+              <label className="block text-sm font-bold mb-2 text-primary-navy">Title</label>
               <input
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="What are you building?"
-                className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-primary-coral focus:ring-0 outline-none transition-colors"
                 required
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium mb-2">Description</label>
+              <label className="block text-sm font-bold mb-2 text-primary-navy">Description</label>
               <textarea
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 placeholder="Tell us about your project, what tools you used, and any lessons learned..."
                 rows={6}
-                className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-violet-500 focus:border-transparent resize-none"
+                className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-primary-coral focus:ring-0 outline-none transition-colors resize-none"
                 required
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium mb-2">Tribe</label>
+              <label className="block text-sm font-bold mb-2 text-primary-navy">Tribe</label>
               <select
                 value={tribe}
                 onChange={(e) => setTribe(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-primary-coral focus:ring-0 outline-none transition-colors"
                 required
               >
                 <option value="">Select a tribe...</option>
@@ -67,17 +66,17 @@ export default function CreatePost() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium mb-2">Tags (comma separated)</label>
+              <label className="block text-sm font-bold mb-2 text-primary-navy">Tags (comma separated)</label>
               <input
                 type="text"
                 placeholder="react, threejs, creative"
-                className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-primary-coral focus:ring-0 outline-none transition-colors"
               />
             </div>
             
             <button
               type="submit"
-              className="w-full py-4 bg-gradient-to-r from-violet-600 to-pink-600 hover:from-violet-700 hover:to-pink-700 text-white rounded-xl font-semibold text-lg transition-all"
+              className="w-full py-4 bg-primary-coral hover:bg-red-500 text-white rounded-xl font-black text-lg transition-all hover:scale-[1.02] shadow-lg"
             >
               Publish Your Vibe
             </button>

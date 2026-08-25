@@ -51,17 +51,17 @@ export default function Feed() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-primary-cream">
       <Hero />
       
-      <main className="max-w-6xl mx-auto px-4 pb-16">
+      <main className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Feed */}
           <div className="lg:col-span-2 space-y-6">
             {/* Filter Tabs */}
-            <div className="flex gap-2 overflow-x-auto pb-2">
+            <div className="flex gap-3 overflow-x-auto pb-4">
               {['All Vibes', 'Web Dev', 'AI Art', 'Games', 'Mobile'].map((tab, i) => (
-                <button key={i} className={`px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${i === 0 ? 'bg-violet-600 text-white' : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-violet-50 dark:hover:bg-violet-900/20'}`}>
+                <button key={i} className={`px-6 py-3 rounded-full text-sm font-bold whitespace-nowrap transition-all ${i === 0 ? 'bg-primary-coral text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-primary-yellow hover:text-primary-navy border-2 border-gray-200'}`}>
                   {tab}
                 </button>
               ))}

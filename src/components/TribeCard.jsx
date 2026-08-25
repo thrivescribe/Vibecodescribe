@@ -1,43 +1,44 @@
 export default function TribeCard({ tribe }) {
   return (
-    <div className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer border border-gray-100 dark:border-gray-700">
+    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all cursor-pointer border-2 border-gray-100 hover:border-primary-yellow">
       {/* Banner */}
-      <div className="h-32 bg-gradient-to-r from-violet-500 to-pink-500 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
+      <div className="h-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-coral via-primary-yellow to-primary-blue opacity-90" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-6xl opacity-30">{tribe.icon}</span>
+          <span className="text-7xl transform group-hover:scale-110 transition-transform duration-300">{tribe.icon}</span>
         </div>
-      </div>
-      
-      {/* Avatar */}
-      <div className="absolute -top-8 left-6">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-400 to-pink-400 flex items-center justify-center text-white text-2xl font-bold border-4 border-white dark:border-gray-800">
-          {tribe.icon}
-        </div>
+        {/* Decorative stripes */}
+        <div className="absolute top-0 left-0 w-full h-2 bg-white/20" />
+        <div className="absolute bottom-0 left-0 w-full h-2 bg-white/20" />
       </div>
       
       {/* Content */}
-      <div className="pt-10 px-6 pb-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">{tribe.name}</h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{tribe.description}</p>
+      <div className="p-6">
+        <h3 className="text-xl font-black text-primary-navy mb-2 group-hover:text-primary-coral transition-colors">{tribe.name}</h3>
+        <p className="text-gray-600 text-sm mb-4 leading-relaxed">{tribe.description}</p>
         
         <div className="flex items-center justify-between">
           <div className="flex -space-x-2">
             {tribe.members.slice(0, 3).map((m, i) => (
-              <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-300 to-pink-300 border-2 border-white dark:border-gray-800" />
+              <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-coral to-primary-yellow border-2 border-white flex items-center justify-center text-xs font-bold text-white">
+                {String.fromCharCode(65 + i)}
+              </div>
             ))}
             {tribe.memberCount > 3 && (
-              <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-white dark:border-gray-800 flex items-center justify-center text-xs text-gray-600 dark:text-gray-400">
+              <div className="w-8 h-8 rounded-full bg-primary-navy border-2 border-white flex items-center justify-center text-xs font-bold text-white">
                 +{tribe.memberCount - 3}
               </div>
             )}
           </div>
           
-          <button className="px-4 py-2 bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 rounded-full text-sm font-medium hover:bg-violet-200 dark:hover:bg-violet-900/50 transition-colors">
+          <button className="px-4 py-2 bg-primary-yellow hover:bg-yellow-400 text-primary-navy rounded-full text-sm font-black transition-all hover:scale-105 shadow-md">
             Join
           </button>
         </div>
       </div>
+      
+      {/* Decorative corner */}
+      <div className="absolute top-2 right-2 w-8 h-8 bg-primary-blue rounded-bl-full opacity-80" />
     </div>
   )
 }

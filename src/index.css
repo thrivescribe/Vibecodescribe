@@ -2,39 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom cursor styles */
+:root {
+  --color-cream: #FFF8F0;
+  --color-navy: #1A1A2E;
+  --color-coral: #FF6B6B;
+  --color-yellow: #FFD93D;
+  --color-blue: #74C0FC;
+  --color-text: #2D2D2D;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-text);
+}
+
+/* Custom cursor trail styles */
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background: currentColor;
+  background-color: var(--color-coral);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: transform 0.1s ease;
+  transition: width 0.2s, height 0.2s;
 }
 
 .cursor-outline {
   width: 40px;
   height: 40px;
-  border: 2px solid currentColor;
+  border: 2px solid var(--color-coral);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
-  transition: all 0.15s ease-out;
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
 }
 
-.cursor-outline.hovering {
-  transform: translate(-50%, -50%) scale(1.5);
-  background: rgba(139, 92, 246, 0.1);
+.cursor-dot.hover {
+  width: 12px;
+  height: 12px;
 }
 
-/* Hide default cursor on interactive elements */
-a, button, [role="button"], input, .cursor-trail-hidden {
-  cursor: none;
+.cursor-outline.hover {
+  width: 60px;
+  height: 60px;
+  border-color: var(--color-yellow);
 }
 
 /* Smooth scrolling */
@@ -42,7 +58,20 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Base styles */
-body {
-  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-coral);
 }

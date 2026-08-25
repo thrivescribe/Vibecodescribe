@@ -3,70 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VibeCode - Hello World</title>
+    <title>VibeCode - Community for AI Coders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #FFF8F0;
+            color: #2D2D2D;
+        }
+        
+        .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
         }
-        .container { max-width: 600px; }
-        h1 { font-size: 3rem; margin-bottom: 1rem; }
-        p { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; }
-        .badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-        }
-        .features {
-            margin-top: 3rem;
+        
+        .hero-content {
+            max-width: 1200px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: #1A1A2E;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-text h1 span.coral {
+            color: #FF6B6B;
+        }
+        
+        .hero-text h1 span.blue {
+            color: #74C0FC;
+        }
+        
+        .hero-text p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
-        .feature {
-            background: rgba(255,255,255,0.1);
-            padding: 1rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
+        
+        .btn-primary {
+            background: #FF6B6B;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
         }
-        .feature-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-        .feature-title { font-weight: 600; font-size: 0.9rem; }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #FFD93D;
+            color: #1A1A2E;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 217, 61, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 217, 61, 0.4);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #eee;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #1A1A2E;
+        }
+        
+        .stat-item p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        
+        .stat-coral h3 { color: #FF6B6B; }
+        .stat-blue h3 { color: #74C0FC; }
+        .stat-yellow h3 { color: #FFD93D; }
+        
+        /* Decorative cards */
+        .hero-visual {
+            position: relative;
+            height: 500px;
+        }
+        
+        .ticket {
+            position: absolute;
+            width: 280px;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .ticket-coral {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+            top: 0;
+            right: 0;
+            transform: rotate(12deg);
+            z-index: 3;
+        }
+        
+        .ticket-yellow {
+            background: linear-gradient(135deg, #FFD93D, #FFE566);
+            color: #1A1A2E;
+            top: 80px;
+            left: 0;
+            transform: rotate(-6deg);
+            z-index: 2;
+        }
+        
+        .ticket-blue {
+            background: linear-gradient(135deg, #74C0FC, #9DD3FD);
+            color: #1A1A2E;
+            bottom: 0;
+            right: 40px;
+            transform: rotate(3deg);
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(var(--rotation)); }
+            50% { transform: translateY(-15px) rotate(var(--rotation)); }
+        }
+        
+        .ticket-coral { --rotation: 12deg; }
+        .ticket-yellow { --rotation: -6deg; }
+        .ticket-blue { --rotation: 3deg; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+            
+            .hero-visual {
+                height: 300px;
+                margin-top: 2rem;
+            }
+            
+            .ticket {
+                width: 200px;
+                padding: 1.5rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello from Vibecodescribe!</h1>
-        <p>This is a test deployment to Vercel.</p>
-        <div class="badge">AgnesCode Build Challenge 2026</div>
-        
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">✨</div>
-                <div class="feature-title">Magnetic Cursor</div>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="badge" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: #1A1A2E; color: white; border-radius: 2rem; font-size: 0.875rem; font-weight: 600; margin-bottom: 1.5rem;">
+                    <span style="width: 8px; height: 8px; background: #FF6B6B; border-radius: 50%; animation: pulse 2s infinite;"></span>
+                    Welcome to the future of coding
+                </div>
+                
+                <h1>
+                    Code by <span class="coral">Vibe,</span><br>
+                    Build with <span class="blue">AI</span>
+                </h1>
+                
+                <p>
+                    Join thousands of AI-assisted coders sharing projects, learning prompts, 
+                    and building the future together. No code reviews required - just vibes.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary">Start Creating</a>
+                    <a href="#" class="btn-secondary">Browse Tribes</a>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item stat-coral">
+                        <h3>12K+</h3>
+                        <p>Creators</p>
+                    </div>
+                    <div class="stat-item stat-blue">
+                        <h3>48K+</h3>
+                        <p>Projects</p>
+                    </div>
+                    <div class="stat-item stat-yellow">
+                        <h3>156</h3>
+                        <p>Tribes</p>
+                    </div>
+                </div>
             </div>
-            <div class="feature">
-                <div class="feature-icon">🌙</div>
-                <div class="feature-title">Dark Mode</div>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">👥</div>
-                <div class="feature-title">Community</div>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🚀</div>
-                <div class="feature-title">Fast Deploy</div>
+            
+            <div class="hero-visual">
+                <div class="ticket ticket-coral">
+                    <div style="font-size: 0.75rem; opacity: 0.9; margin-bottom: 0.5rem;">ADMIT ONE</div>
+                    <div style="font-size: 1.75rem;">Daily Vibes</div>
+                    <div style="font-size: 0.875rem; opacity: 0.9; margin-top: 0.5rem;">A fresh pop culture question daily</div>
+                </div>
+                
+                <div class="ticket ticket-yellow">
+                    <div style="font-size: 0.75rem; opacity: 0.8; margin-bottom: 0.5rem;">GROUP PASS</div>
+                    <div style="font-size: 1.75rem;">Host a Game</div>
+                    <div style="font-size: 0.875rem; opacity: 0.8; margin-top: 0.5rem;">Choose a party game and bring a crew</div>
+                    <div style="font-size: 0.75rem; font-weight: 800; margin-top: 0.75rem;">8-10 PLAYERS</div>
+                </div>
+                
+                <div class="ticket ticket-blue">
+                    <div style="font-size: 0.75rem; opacity: 0.9; margin-bottom: 0.5rem;">SINGLE PASS</div>
+                    <div style="font-size: 1.75rem;">Join a Game</div>
+                    <div style="font-size: 0.875rem; opacity: 0.9; margin-top: 0.5rem;">Enter a room code and play with your crew</div>
+                    <div style="font-size: 0.75rem; font-weight: 800; margin-top: 0.75rem;">ANYTIME • 2-10 PLAYERS</div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    
+    <script>
+        // Simple fade-in animation on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const hero = document.querySelector('.hero');
+            hero.style.opacity = '0';
+            hero.style.transition = 'opacity 0.8s ease';
+            setTimeout(() => {
+                hero.style.opacity = '1';
+            }, 100);
+        });
+    </script>
 </body>
 </html>
