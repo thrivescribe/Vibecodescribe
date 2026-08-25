@@ -211,8 +211,9 @@ npx vercel deploy --prod
 Once connected, every push to `master` branch will automatically trigger a new deployment on Vercel.
 
 ### Deployment URLs
-- **Live Site:** https://work-1e30w5zp5-pf23.vercel.app
+- **Live Site:** https://vibecodescribe.vercel.app ✅ (Custom Alias)
 - **Production URL:** https://work-theta-teal.vercel.app
+- **Direct URL:** https://work-r1l14mes1-pf23.vercel.app
 
 ---
 
