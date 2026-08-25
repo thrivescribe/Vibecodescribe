@@ -1,289 +1,135 @@
 # VibeCode Community - Project Handover Manifest
-
-**Created:** 2026-08-25  
-**Last Updated:** 2026-08-25  
-**Project:** AgnesCode Build Challenge Entry
+**Repository:** https://github.com/thrivescribe/Vibecodescribe
+**Live URL:** https://vibecodescribe.vercel.app
+**Last Updated:** 2026-08-23
 
 ---
 
 ## Project Overview
-
-**Product Name:** VibeCode  
-**Tagline:** A community platform for AI-assisted coders to share projects, get feedback, and connect.  
-**Type:** Web application (mobile-ready via Capacitor later)  
-**Competition:** AgnesCode Build Challenge (One Week, One Project)  
-**Deadline:** August 26, 2026, 11:30 PM GMT+8  
-**Repository:** https://github.com/thrivescribe/Vibecodescribe
-
----
-
-## Current Status
-
-### Completed
-- [x] Product brief created
-- [x] Ground rules established (YAGNI, handover manifest)
-- [x] Repository initialized on GitHub
-- [x] Tech stack selected: React + Vite
-- [x] Design direction: Light/dark mode toggle, magnetic cursor trail
-- [x] Project structure created (React components, Tailwind config)
-- [x] Initial commit pushed to GitHub
-- [x] Build successful locally
-- [x] Code pushed to GitHub
-
-### In Progress
-- Setting up Vercel deployment (need user to connect account)
-
-### Pending
-- [ ] Get final decisions on: demo data, scope boundary
-- [ ] Deploy to Vercel
-- [ ] Test deployment
-- [ ] Iterate based on feedback
-- [ ] Final challenge submission prep
+Vibe Coding Community website for AgnesCode Build Challenge, inspired by AI Workshop Lite / Skool design patterns. Users can sign in with Google, choose username, earn XP/levels, and interact through posts and comments.
 
 ---
 
 ## Tech Stack
-
-| Component | Technology | Reason |
-|-----------|-----------|--------|
-| Framework | **React 18 + Vite** | Fast dev, great ecosystem, easy mobile wrap |
-| Styling | **Tailwind CSS** | Rapid development, dark mode support |
-| State Management | **Zustand** (optional) | Simple, lightweight state management |
-| Mobile Ready | **Capacitor** | Wrap web app for Android/iOS later |
-| Deployment | **Vercel** | Automatic deployments from GitHub |
+- **Framework:** React 18 + Vite
+- **Styling:** Tailwind CSS (custom config with cream/navy/coral/yellow/blue palette)
+- **Routing:** React Router v6
+- **Icons:** Lucide React
+- **Auth:** Firebase (Google Sign-In, planned implementation)
+- **Deployment:** Vercel with custom alias vibecodescribe.vercel.app
 
 ---
 
-## Project Structure
+## Core Features Built
 
+### 1. Navigation & Layout
+- **Navbar.jsx**: Shows different UI for logged in/out users with Community/Members/Leaderboards tabs
+- **CursorTrail.jsx**: Magnetic cursor trail effect using requestAnimationFrame
+- **ThemeToggle.jsx**: Light/dark mode toggle with localStorage persistence
+- **Color Palette**: Cream (#FFF8F0), Navy (#1A1A2E), Coral (#FF6B6B), Yellow (#FFD93D), Blue (#74C0FC)
+
+### 2. Pages (AI Workshop Lite Design)
+- **Feed.jsx**: Community feed with stats bar (Members: 12.8K, Online: 342, Admins: 12), category tabs (All Vibes/General/Announcements/Meet & Greet/Ask & Assist), pinned announcements, post cards
+- **Members.jsx**: Member directory with search, filter by rank (Newbie/Rookie/Contributor/Creator), sort by XP/level/posts, progress bars to next level
+- **Leaderboards.jsx**: 30-day leaderboard with podium visualization (top 3), full list with trend indicators, category filters
+- **CreatePost.jsx**: Post creation with type selector (Share/Question/Discussion), category dropdown, tag input
+- **Tribes.jsx**: Tribe browsing page (placeholder)
+
+### 3. Components
+- **PostCard.jsx**: Post display with like/comment/share actions, author avatar, timestamp, tags
+- **Sidebar.jsx**: Trending tribes, hot tags, top creators
+- **Hero.jsx**: Landing page hero section (existing)
+
+---
+
+## XP System Design
+- **Formula**: Level = floor(sqrt(XP/50)) + 1
+- **Rewards**: Login: 10, Post: 50, Comment: 20, Like received: 5, Tribe join: 30, Profile complete: 25
+- **Ranks**: Newbie → Rookie → Contributor → Creator → Expert → Master → Vibe Master → Community Legend → Legendary Coder → Code Deity
+- **Threshold**: Level N requires N² × 50 XP
+
+---
+
+## File Structure
 ```
-Vibecodescribe/
-├── public/                    # Static assets
-│   ├── favicon.ico
-│   └── index.html            # Hello World test page
-├── src/
-│   ├── components/           # React components
-│   │   ├── CursorTrail.jsx   # Magnetic cursor effect
-│   │   ├── ThemeToggle.jsx   # Light/dark mode switch
-│   │   ├── Navbar.jsx
-│   │   ├── PostCard.jsx
-│   │   ├── Hero.jsx
-│   │   ├── TribeCard.jsx
-│   │   └── Sidebar.jsx
-│   ├── pages/                # Page components
-│   │   ├── Feed.jsx
-│   │   ├── Tribes.jsx
-│   │   └── CreatePost.jsx
-│   ├── context/              # React context (theme, etc.)
-│   │   └── ThemeContext.jsx
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── vercel.json               # Vercel configuration
-├── package.json
-├── vite.config.js
-├── tailwind.config.js
-├── postcss.config.js
-├── index.html
-├── README.md
-├── HANDOVER.md               # This file
-├── GROUNDRULES.md            # Working principles
-└── product-brief.md          # Original product brief
-```
-
----
-
-## Design System
-
-**Posture:** Playful × Bold × Community-first  
-**Inspiration:** The reference image shows vibrant, playful design with ticket-style cards
-
-### Color Palette (Applied)
-| Name | Hex | Usage |
-|------|-----|-------|
-| Primary Cream | `#FFF8F0` | Background |
-| Primary Navy | `#1A1A2E` | Header/Text |
-| Coral Pink | `#FF6B6B` | Accent/CTA |
-| Yellow | `#FFD93D` | Secondary accent |
-| Light Blue | `#74C0FC` | Tertiary accent |
-| Text Gray | `#2D2D2D` | Body text |
-
-### Typography
-- **Primary Font:** Inter (Google Fonts)
-- **Weights:** 400, 500, 600, 700, 800, 900
-- **Style:** Bold headlines, clean body text
-
-### Visual Elements
-- Rounded corners (2xl: 1rem)
-- Playful floating animations
-- Ticket/card-style decorative elements
-- Gradient backgrounds
-- Thick borders (2px) for playful feel
-
----
-
-## Features (MVP - YAGNI Compliant)
-
-### Must Have (Build These)
-1. **Homepage** - Landing page with hero section
-2. **Community/Tribe Pages** - Browse and join interest-based groups
-3. **Project Feed** - Infinite-scroll feed of user posts
-4. **User Profiles** - Showcase user's projects (basic)
-5. **Post Creation** - Share projects with title, description, tags (basic form)
-6. **Engagement** - Like button functionality
-7. **Theme Toggle** - Light/dark mode switch
-8. **Magnetic Cursor Trail** - Interactive cursor effect
-
-### Not Needed Yet (YAGNI - Do NOT Build)
-- User authentication/accounts
-- Payments/monetization
-- Push notifications
-- Admin dashboard
-- Third-party integrations
-- Advanced settings
-- Real-time updates (page refresh is fine)
-- Comments (if scope is minimal)
-
----
-
-## Testing Criteria
-
-**Definition of Done:**
-- A person can complete this journey on both phone and desktop:
-  > "Land on site → browse tribes → pick one → read 3 posts → like/comment → see example post"
-
-**Checklist:**
-- [ ] Homepage loads correctly
-- [ ] Dark/light mode toggle works
-- [ ] Cursor trail follows mouse smoothly
-- [ ] Tribe pages accessible
-- [ ] Posts display properly
-- [ ] Like action works
-- [ ] Mobile responsive
-- [ ] No console errors
-- [ ] Vercel deployment successful
-
----
-
-## GitHub Repository
-
-**Status:** READY  
-**Repo Name:** `Vibecodescribe`  
-**Your GitHub:** https://github.com/thrivescribe  
-**Repo URL:** https://github.com/thrivescribe/Vibecodescribe  
-**Local Git:** Initialized and connected to remote
-
----
-
-## Vercel Deployment
-
-**Status:** ✅ DEPLOYED SUCCESSFULLY
-
-### Deployment Status
-- ✅ Code pushed to GitHub: https://github.com/thrivescribe/Vibecodescribe
-- ✅ Build successful locally
-- ✅ Vercel connected and deployed
-- 🌐 **Live URL:** https://work-1e30w5zp5-pf23.vercel.app
-- 🔗 **Production URL:** https://work-theta-teal.vercel.app
-
-### How to Connect to Vercel (Manual Steps)
-
-**Method 1: Via Vercel Website (Easiest)**
-1. Go to https://vercel.com/new
-2. Sign in with your GitHub account
-3. Select the `Vibecodescribe` repository
-4. Click "Deploy" (default settings work fine)
-5. Wait for build to complete (~2-3 minutes)
-6. Your live URL will be: https://vibecodescribe.vercel.app
-
-**Method 2: Via Vercel CLI**
-Run these commands:
-```bash
-# Login to Vercel
-npx vercel login
-
-# Deploy from your project folder
-cd path/to/Vibecodescribe
-npx vercel deploy --prod
+src/
+├── App.jsx                    # Router with all routes
+├── main.jsx                   # Entry point
+├── index.css                  # Global styles, cursor trail, color variables
+├── components/
+│   ├── Navbar.jsx            # Nav with auth state (Community/Members/Leaderboards)
+│   ├── CursorTrail.jsx       # Mouse trail effect
+│   ├── ThemeToggle.jsx       # Light/dark toggle
+│   ├── PostCard.jsx          # Post card component
+│   ├── Sidebar.jsx           # Right sidebar
+│   ├── SignInButton.jsx      # Google sign-in button
+│   └── UsernameOnboarding.jsx # Username selection after signup
+├── context/
+│   └── UserContext.jsx       # Auth state and XP management
+├── lib/
+│   └── firebase.js           # Firebase config, XP rewards, level calculation
+└── pages/
+    ├── Feed.jsx              # Main community feed with stats bar
+    ├── Members.jsx           # Members directory with search/filter
+    ├── Leaderboards.jsx      # XP leaderboard with podium
+    ├── CreatePost.jsx        # Post creation with type selector
+    └── Tribes.jsx            # Tribes browsing
 ```
 
-**Note:** The project is configured with React + Vite + Tailwind CSS. It includes:
-- Magnetic cursor trail effect
-- Light/dark mode toggle
-- Homepage with feed
-- Tribe browsing page
-- Post creation page
+---
 
-### Automatic Future Deployments
-Once connected, every push to `master` branch will automatically trigger a new deployment on Vercel.
-
-### Deployment URLs
-- **Live Site:** https://vibecoderscribe-qg2vb6gjh-pf23.vercel.app ✅ (Latest build)
-- **Custom Alias:** https://vibecodescribe.vercel.app
-- **Production URL:** https://work-theta-teal.vercel.app
+## Routes
+- `/` - Feed (Community)
+- `/members` - Members directory
+- `/leaderboards` - XP Leaderboards
+- `/create` - Create post (Share/Question/Discussion)
+- `/tribes` - Tribes browsing
 
 ---
 
-## 📸 Screenshots
+## Deployment
+- **Vercel**: https://vibecodescribe.vercel.app
+- **GitHub**: https://github.com/thrivescribe/Vibecodescribe
+- **Build**: npm run build (uses Vercel auto-detection for Vite)
+- **vercel.json**: Static file serving configuration
 
-The deployment is live and includes:
-- Magnetic cursor trail effect (follows mouse)
-- Light/dark mode toggle (top right)
-- Homepage with hero section
-- Navigation bar with search
-- Sample posts in feed
-- Tribe browsing page
-- Post creation form
+---
+
+## Pending Tasks
+- [ ] Complete Firebase authentication setup with actual Firebase config
+- [ ] Implement real-time comment system on posts
+- [ ] Add user profile pages with XP progress display
+- [ ] Connect to backend API (Firebase Firestore)
+- [ ] Mobile responsive testing for all new pages
+- [ ] Add image upload functionality for posts
 
 ---
 
 ## Agent Communication Log
-
-| Timestamp | Agent | Action | Notes |
-|-----------|-------|--------|-------|
-| 2026-08-25 19:54 | Primary | Establishing ground rules | Created handover manifest, defined YAGNI principle |
-| 2026-08-25 19:55 | Primary | Created ground rules | YAGNI, handover protocol, ask-before-assuming |
-| 2026-08-25 20:00 | Primary | Updated repo name | Changed from sgvibecodr to Vibecodescribe |
-| 2026-08-25 20:09 | Primary | Clarified cursor style | Magnetic cursor trail (follows mouse), not custom cursor icon |
-| 2026-08-25 20:10 | Primary | Language requirement | All documentation in English only |
-| 2026-08-25 20:10 | Primary | Vercel setup | Preparing deployment pipeline |
-| 2026-08-25 20:20 | Primary | Project structure created | React + Vite project with all components |
-| 2026-08-25 20:21 | Primary | Fixed import paths | Corrected relative imports in Feed.jsx |
-| 2026-08-25 20:22 | Primary | Pushed code to GitHub | All files uploaded to https://github.com/thrivescribe/Vibecodescribe |
-| 2026-08-25 20:23 | Primary | Build successful | React app builds successfully with Vite |
+- 2026-08-22: Initial project setup, color theme extraction from reference images
+- 2026-08-22: Built navigation, cursor trail, light/dark mode toggle
+- 2026-08-23: Created Members page with search/filter/sort functionality
+- 2026-08-23: Created Leaderboards page with podium visualization
+- 2026-08-23: Enhanced Feed with community stats bar and category tabs (AI Workshop Lite style)
+- 2026-08-23: Updated CreatePost with post type selector (Share/Question/Discussion)
+- 2026-08-23: Updated Navbar with auth-aware navigation (Community/Members/Leaderboards)
+- 2026-08-23: Pushed all changes to GitHub
 
 ---
 
-## Open Questions
-
-These require user input before proceeding:
-
-1. ~~**Repo Name?**~~ ✅ COMPLETED: `Vibecodescribe`
-2. ~~**Tech Stack?**~~ ✅ COMPLETED: **React + Vite**
-3. ~~**Design Preferences?**~~ ✅ PARTIALLY COMPLETED:
-   - Light mode + dark mode toggle ✅
-   - Font: TBD (user will share references later)
-   - Cursor style: **Magnetic cursor trail** ✅
-   - Vibe: User to share pictures later ⏸️
-4. **Demo Data?** - ❓ NEEDED
-5. **Scope Boundary?** - ❓ NEEDED
+## Ground Rules
+1. **YAGNI Principle** - Only build MVP features, no "just in case" code
+2. **Ask before assuming** - Confirm with user before making decisions
+3. **English only** - All documentation and comments in English
+4. **Update HANDOVER.md** - After every significant code change
 
 ---
 
-## Next Steps
-
-1. ✅ Initialize React + Vite project
-2. ✅ Install dependencies (Tailwind, etc.)
-3. ✅ Set up Vercel configuration
-4. ✅ Create basic project structure
-5. ✅ Implement magnetic cursor trail component
-6. ✅ Build homepage and feed
-7. ✅ Add theme toggle
-8. ✅ Test locally
-9. ✅ Push to GitHub
-10. ⏳ Deploy to Vercel (pending user action)
-11. ⏳ Iterate based on user feedback
-
----
-
-*Language Policy: All project documentation, comments, and code must be in English only.*
+## Key Design Patterns
+- Stats bar at top showing Members/Online/Admins counts
+- Category tabs for filtering content (All Vibes/General/Announcements/Meet & Greet/Ask & Assist)
+- Pinned announcements with visual distinction
+- Member avatars shown in horizontal scroll
+- Settings button for tribe management
+- Leaderboard with medal visualization for top 3
+- Progress bars showing XP progression to next level
