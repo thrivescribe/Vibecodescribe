@@ -34,7 +34,7 @@ export default function Navbar() {
               >
                 Feed
               </Link>
-              <button className="px-6 py-2 bg-primary-coral hover:bg-red-500 text-white rounded-full font-bold text-sm transition-all hover:scale-105">
+              <Link to="/login" className="px-6 py-2 bg-primary-coral hover:bg-red-500 text-white rounded-full font-bold text-sm transition-all hover:scale-105">
                 Sign In
               </button>
             </div>
