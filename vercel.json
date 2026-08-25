@@ -1,8 +1,5 @@
 {
-  "builds": [
-    { "src": "public/hello-world.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/public/hello-world.html" }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite"
 }
