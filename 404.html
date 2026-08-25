@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeCode - Redirecting...</title>
+    <script type="text/javascript">
+        // SPA routing for GitHub Pages
+        var pathSegmentsToKeep = 0;
+        var l = window.location;
+        l.replace(
+            l.protocol + '://' + l.hostname + (l.port ? ':' + l.port : '') +
+            l.pathname.split('/').slice(0, !pathSegmentsToKeep ? 1 : pathSegmentsToKeep + 1).join('/') +
+            '/index.html' + l.search + l.hash
+        );
+    </script>
+</head>
+<body>
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=/" />
+    </noscript>
+</body>
+</html>
